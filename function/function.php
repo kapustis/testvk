@@ -9,3 +9,9 @@ if ($_GET['do'] == 'logout') { // выход
 	unset($_SESSION['user']);
 	header("Location: http://testvk");
 }
+
+function print_arr($arr){
+		echo "<pre>";
+		print_r($arr);
+		echo "</pre>";
+}

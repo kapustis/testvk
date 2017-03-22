@@ -7,10 +7,10 @@ require_once "function/function.php";
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<link rel="stylesheet" href="libs/foundation/css/foundation.css">
-	<link rel="stylesheet" href="libs/foundation/css/app.css">
-	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="view/libs/foundation/css/foundation.css">
+	<link rel="stylesheet" href="view/libs/foundation/css/app.css">
+	<link rel="stylesheet" href="view/libs/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="view/css/style.css" type="text/css">
 	<title>Тестовый сайт</title>
 </head>
 <body>
@@ -62,16 +62,6 @@ require_once "function/function.php";
 
 </section>
 
-<footer class="row">
-	<div class="large-12 columns">
-		<hr/>
-		<div class="row">
-			<div class="large-6 columns">
-				<p>&copy; <?php echo date("Y"); ?></p>
-			</div>
-		</div>
-	</div>
-</footer>
 
 </body>
 

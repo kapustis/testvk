@@ -18,23 +18,27 @@ class Message
 				$this->mysqli = new mysqli(HOST, USER, PASSWORD, DB_NAME);
 		}
 
-
 		public function get_message()
 		{
-				$arr_cat = array();
+				$arr_mess = array();
 				$sql = "SELECT * FROM messages";
 
 				$result = $this->mysqli->query($sql);
 
-				for ($i = 0; $i < $result->num_rows; $i++) {
-						$row = ($result->fetch_assoc());
-						if (!isset($arr_cat[$row['parent_id']])) {
-								$arr_cat[$row['parent_id']] = array();
+
+				while ($row = ($result->fetch_assoc())) {
+						$arr_mess[$row['id']] = $row;
+				}
+				$tree = array();
+				foreach ($arr_mess as $id => &$node) {
+						if (!$node['parent_id']) {
+								$tree[$id] = &$node;
+						} else {
+								$arr_mess[$node['parent_id']]['childs'][$id] = &$node;
 						}
-						$arr_cat[$row['parent_id']][] = $row;
 				}
 
-				return $arr_cat;
+				return $arr_mess;
 		}
 
 		function view_message($arr, $parent_id = 0)

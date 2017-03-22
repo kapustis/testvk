@@ -2,7 +2,6 @@
 
 class Api_Vk
 {
-
 		private $code;
 		private $token;
 		private $id;
