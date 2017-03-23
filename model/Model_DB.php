@@ -100,7 +100,7 @@ class Model_DB
 				if ($result->num_rows == 0) {
 						return false;
 				}
-
+				$row = array();
 				for ($i = 0; $i < $result->num_rows; $i++) {
 						$row[] = $result->fetch_assoc();
 				}
