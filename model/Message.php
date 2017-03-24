@@ -25,18 +25,27 @@ class Message
 
 				$result = $this->mysqli->query($sql);
 
+				for($i = 0; $i < $result->num_rows;$i++) {
+						$row = $result->fetch_array();
 
-				while ($row = ($result->fetch_assoc())) {
-						$arr_mess[$row['id']] = $row;
-				}
-				$tree = array();
-				foreach ($arr_mess as $id => &$node) {
-						if (!$node['parent_id']) {
-								$tree[$id] = &$node;
-						} else {
-								$arr_mess[$node['parent_id']]['childs'][$id] = &$node;
+						//Формируем массив, где ключами являются адишники на родительские категории
+						if(empty($arr_mess[$row['parent_id']])) {
+								$arr_mess[$row['parent_id']] = array();
 						}
+						$arr_mess[$row['parent_id']][] = $row;
 				}
+
+//				while ($row = ($result->fetch_assoc())) {
+//						$arr_mess[$row['id']] = $row;
+//				}
+//				$tree = array();
+//				foreach ($arr_mess as $id => &$node) {
+//						if (!$node['parent_id']) {
+//								$tree[$id] = &$node;
+//						} else {
+//								$arr_mess[$node['parent_id']]['childs'][$id] = &$node;
+//						}
+//				}
 
 				return $arr_mess;
 		}

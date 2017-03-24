@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="libs/foundation/css/foundation.css">
 		<link rel="stylesheet" href="libs/foundation/css/app.css">
 		<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/mystyle.css" type="text/css">
 		<title>Document</title>
 <!--		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>-->
 

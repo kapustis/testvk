@@ -29,18 +29,17 @@ if (isset($data['send_message'])) {
 }
 ?>
 <div class="row">
-		<?php
-		print_arr($vi->get_message());
-		$arr = $vi->get_message(); ?>
-	<ul>
-			<?php foreach ($arr as $item): ?>
-				<li>
-					<p><? echo $item['id']; ?> </p>
-						<?php if (isset($item['childs'])): ?>
-
-						<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
-	</ul>
+	<ol>
+			<?php
+					print_arr($vi->get_message());
+			$arri = $vi->get_message();
+			foreach ($arri as $key => $comments) {
+					if ($key !== 0) break;
+//				include('comment_inc.php'['items' => $comments]);
+					$items = $comments;
+					include('view/comment_inc.php');
+			}
+			?>
+	</ol>
 </div>
 

@@ -10,7 +10,7 @@ require_once "function/function.php";
 	<link rel="stylesheet" href="view/libs/foundation/css/foundation.css">
 	<link rel="stylesheet" href="view/libs/foundation/css/app.css">
 	<link rel="stylesheet" href="view/libs/font-awesome/css/font-awesome.css">
-	<link rel="stylesheet" href="view/css/style.css" type="text/css">
+	<link rel="stylesheet" href="view/css/mystyle.css" type="text/css">
 	<title>Тестовый сайт</title>
 </head>
 <body>
